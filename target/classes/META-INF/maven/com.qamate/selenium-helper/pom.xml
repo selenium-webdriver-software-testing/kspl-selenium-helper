@@ -15,6 +15,33 @@
   </properties>
 
   <dependencies>
+   <dependency>
+<groupId>com.thoughtworks.xstream</groupId>
+<artifactId>xstream</artifactId>
+<version>1.4.2</version>
+<type>jar</type>
+<scope>compile</scope>
+</dependency>
+   <dependency>
+<groupId>javax.mail</groupId>
+<artifactId>mail</artifactId>
+<version>1.4.4</version>
+</dependency>
+<dependency>
+<groupId>net.sourceforge.jexcelapi</groupId>
+<artifactId>jxl</artifactId>
+<version>2.6.12</version>
+</dependency>
+   <dependency>
+	<groupId>org.testng</groupId>
+	<artifactId>testng</artifactId>
+	<version>6.4</version>
+	</dependency>
+      <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>2.42.2</version>
+    </dependency> 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
