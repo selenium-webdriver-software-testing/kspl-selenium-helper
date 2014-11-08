@@ -1,4 +1,4 @@
-package com.qamate.selenium_helper.base;
+package com.kagrana.base;
 
 import java.net.URL;
 import java.util.Map;
@@ -11,21 +11,21 @@ import org.openqa.selenium.remote.Response;
 
 
 
-public class iWebDriver extends RemoteWebDriver {
+public class xRemoteWebDriver extends RemoteWebDriver {
 	
-	protected iWebDriver() {}
+	protected xRemoteWebDriver() {}
 	  
-	  public iWebDriver(CommandExecutor executor, Capabilities desiredCapabilities)
+	  public xRemoteWebDriver(CommandExecutor executor, Capabilities desiredCapabilities)
 	  {
 	    super(executor, desiredCapabilities);
 	  }
 	  
-	  public iWebDriver(Capabilities desiredCapabilities)
+	  public xRemoteWebDriver(Capabilities desiredCapabilities)
 	  {
 	    super(desiredCapabilities);
 	  }
 	  
-	  public iWebDriver(URL remoteAddress, Capabilities desiredCapabilities)
+	  public xRemoteWebDriver(URL remoteAddress, Capabilities desiredCapabilities)
 	  {
 	    super(remoteAddress, desiredCapabilities);
 	  }
