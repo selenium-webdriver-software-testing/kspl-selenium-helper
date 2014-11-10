@@ -1,5 +1,6 @@
 package com.kagrana.base;
 
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ public abstract class BaseActions {
 			"version", "internal" })
 	public void beforeTest(String remoteURL, String remotePort, String baseURL,
 			String OS, String browser, String version, String internal)
-			throws MalformedURLException {
+			throws MalformedURLException, FileNotFoundException {
 		config = new WebDriverConfig();
 		log = new Log();
 		config.setRemoteURL(remoteURL);
