@@ -2,6 +2,8 @@ package com.kagrana.util;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 
 public class MiscellaneousFunctions {
 	public static URL getWebDriverURL(String remoteURL,int port) throws MalformedURLException{
@@ -14,5 +16,19 @@ public class MiscellaneousFunctions {
 		}
 		return null;
 	}
-
+	/**
+	 * This function is mainly used by TestNG data provider
+	 * @param mapList
+	 * @param log
+	 * @return
+	 */
+	public static Object[][] listHashMapToObject(List<HashMap<String, String>> mapList){
+		Object[][] data = new Object[mapList.size()][1];
+		{
+			int i=0;
+			for(HashMap<String, String> map : mapList)
+				data[i++][0] = map;
+		}
+		return data;
+	}
 }
