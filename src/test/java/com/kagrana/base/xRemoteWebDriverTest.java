@@ -11,20 +11,11 @@ import org.openqa.selenium.WebDriver;
 import com.kagrana.DTO.WebDriverConfig;
 import com.kagrana.util.Log;
 
-public class xRemoteWebDriverTest {
+public class xRemoteWebDriverTest extends BaseActions {
 	
 	private WebDriver driver;
 	private WebDriverConfig config;
 	private Log log;
-	@Before
-	public void setUp() throws Exception {
-		config = new WebDriverConfig();
-		log = new Log();
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
 
 	@Test
 	public void internalURLTest() throws MalformedURLException, FileNotFoundException {

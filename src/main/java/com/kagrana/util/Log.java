@@ -1,7 +1,16 @@
 package com.kagrana.util;
 
+import com.kagrana.reporting.ReportingType;
+
 public class Log {
 	private boolean debugEnabled = true;
+	private ReportingType reportingType;
+	public Log(){
+		
+	}
+	public Log(ReportingType reportingType){
+		this.reportingType = reportingType;
+	}
 
 	public boolean isDebugEnabled() {
 		return debugEnabled;
