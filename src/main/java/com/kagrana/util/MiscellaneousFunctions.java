@@ -6,6 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MiscellaneousFunctions {
+	/**
+	 * This method helps form URL for webdriver
+	 * @param remoteURL
+	 * @param port
+	 * @return
+	 * @throws MalformedURLException
+	 */
 	public static URL getWebDriverURL(String remoteURL,int port) throws MalformedURLException{
 		if(port > 0 && remoteURL != null && !remoteURL.equals("")){
 			if(!remoteURL.startsWith("http://")){
