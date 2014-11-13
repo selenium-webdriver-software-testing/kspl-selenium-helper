@@ -2,31 +2,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.qamate</groupId>
+  <groupId>com.kagrana</groupId>
   <artifactId>selenium-helper</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>selenium-helper</name>
-  <url>http://maven.apache.org</url>
+  <url>http://kagrana.com/selenium-helper</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <dependencies>
-   <dependency>
-		<groupId>com.thoughtworks.xstream</groupId>
-		<artifactId>xstream</artifactId>
-		<version>1.4.2</version>
-		<type>jar</type>
-		<scope>compile</scope>
-	</dependency>
-   	<dependency>
-		<groupId>javax.mail</groupId>
-		<artifactId>mail</artifactId>
-		<version>1.4.4</version>
-	</dependency>
 	<dependency>
 		<groupId>net.sourceforge.jexcelapi</groupId>
 		<artifactId>jxl</artifactId>
@@ -36,17 +24,19 @@
 		<groupId>org.testng</groupId>
 		<artifactId>testng</artifactId>
 		<version>6.4</version>
+	</dependency> 
+  	<dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+		<artifactId>selenium-java</artifactId>
+		<version>2.43.1</version>
 	</dependency>
- 	<dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>2.42.2</version>
-    </dependency> 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
+  <description>selenium-helper is developed to make selenium testing easy.</description>
+  <organization>
+  	<name>Kagrana Software Pvt Ltd</name>
+  	<url>http://kagrana.com</url>
+  </organization>
+  <scm>
+  	<url>https://github.com/qamate/kspl-selenium-helper</url>
+  </scm>
 </project>
