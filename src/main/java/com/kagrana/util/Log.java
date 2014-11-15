@@ -4,6 +4,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.apache.commons.io.FileUtils;
 
@@ -114,8 +123,11 @@ public class Log {
 	 * Generate report in HTML file
 	 */
 	private void writeHTMLReport(String reportDirectory){
+		String xmlFileName = reportDirectory + "\\" + "report.xml";
+		String htmlFileName = reportDirectory + "\\" + "report.html";
 		try{
-			FileOutputStream fos = new FileOutputStream(reportDirectory + "\\" + "report.xml");
+			
+			FileOutputStream fos = new FileOutputStream(xmlFileName);
 			XStream xStream = new XStream();
 			xStream.setMode(1001);
 		    xStream.alias("TestSuite", TestSuite.class);
@@ -128,7 +140,37 @@ public class Log {
 		}catch(Exception e){
 			this.write(e);
 		}
+	    try
+	    {
+	    	PropertyFileManager pfm = new PropertyFileManager(this);
+	      TransformerFactory tFactory = TransformerFactory.newInstance();
+	      Transformer transformer = null;
+	      Source xslFileSource = null;
+	      InputStream inputStream = getClass().getClassLoader()
+	    	        .getResourceAsStream(pfm.getProperty("reportXSLFileName"));
+	      xslFileSource = new StreamSource(inputStream);
+	      transformer = tFactory.newTransformer(xslFileSource);
+	      transformer.transform(new StreamSource(
+	        xmlFileName), new StreamResult(
+	        new FileOutputStream(htmlFileName)));
+	    }
+	    catch (TransformerConfigurationException e)
+	    {
+	      this.write(e);
+	    }
+	    catch (FileNotFoundException e)
+	    {
+	    	this.write(e);
+	    }
+	    catch (TransformerException e)
+	    {
+	    	this.write(e);
+	    }
+	    catch (Exception e)
+	    {
+	    	this.write(e);
+	    }
 	}
-
+	
 
 }
