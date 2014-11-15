@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import com.kagrana.DTO.TestStep;
 
-public class BaseActionsTest extends BaseActions {
+public class BaseActionsTest3 extends BaseActions {
 	@Test
 	public void reportingTest() throws InterruptedException{
-		this.testCase.setTestCaseName("Login Test1");
+		this.testCase.setTestCaseName("Search Test 1");
 		TestStep testStep = new TestStep();
 		testStep.setDescription("Description");
 		testStep.setExceptedData("Expected Data");
@@ -29,7 +29,7 @@ public class BaseActionsTest extends BaseActions {
 	}
 	@Test
 	public void reportingTest2() throws InterruptedException{
-		this.testCase.setTestCaseName("Login Test2");
+		this.testCase.setTestCaseName("Search Test 2");
 		TestStep testStep = new TestStep();
 		testStep.setDescription("Description");
 		testStep.setExceptedData("Expected Data");
@@ -50,7 +50,7 @@ public class BaseActionsTest extends BaseActions {
 	}
 	@Test
 	public void reportingTest3() throws InterruptedException{
-		this.testCase.setTestCaseName("Login Test 3");
+		this.testCase.setTestCaseName("Search Test 3");
 		TestStep testStep = new TestStep();
 		testStep.setDescription("Description");
 		testStep.setExceptedData("Expected Data");

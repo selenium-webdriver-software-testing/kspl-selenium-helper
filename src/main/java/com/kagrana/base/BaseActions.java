@@ -18,10 +18,11 @@ import com.kagrana.util.Log;
 
 public abstract class BaseActions {
 	protected WebDriver driver;
-	protected Log log;
+	protected static Log log;
 	protected WebDriverConfig config;
 	protected String baseURL;
 	protected TestCase testCase;
+	private static int testCaseCount = 1;
 	
 	/**
 	 * This gets invoked even before suite starts.
@@ -30,7 +31,7 @@ public abstract class BaseActions {
 	@Parameters({"ReportLocation"})
 	@BeforeSuite
 	public void beforeSuite(@Optional String ReportLocation){
-		config = new WebDriverConfig();
+		
 		log = new Log();
 	}
 	@BeforeMethod
@@ -39,8 +40,12 @@ public abstract class BaseActions {
 	public void beforeTest(String remoteURL, String remotePort, String baseURL,
 			String OS, String browser, String version, String internal)
 			throws MalformedURLException, FileNotFoundException {
+		log.write("Executing Test >>>>>");
 		this.testCase = new TestCase();
-		
+		this.testCase.setBrowser(browser);
+		this.testCase.setParentURL(baseURL);
+		this.testCase.setTestCaseId("KT"+testCaseCount++);
+		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
 		config.setRemotePort(Integer.parseInt(remotePort));
 		this.baseURL = baseURL;
@@ -55,6 +60,7 @@ public abstract class BaseActions {
 
 	@AfterMethod
 	public void afterTest() {
+		log.write("Completed execution >>>");
 		log.addTestCase(testCase);
 		try {
 			driver.close();

@@ -25,6 +25,8 @@ public class ReadCSV {
 		this.fileName = fileName;
 	}
 	/**
+	 * First value is your key and each row is your value.
+	 * Size of Hashmap is = no of rows - 1(headers)
 	 * 
 	 * @return this will return list of hashmap
 	 */

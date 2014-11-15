@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
  
-<suite name="Suite1" verbose="1" parallel="methods" >
+<suite name="Suite1" parallel="tests" thread-count="5">
 <parameter name="ReportLocation" value="."></parameter>
 <parameter name="remoteURL" value="localhost"></parameter>
 <parameter name="remotePort" value="4444"></parameter>
@@ -9,4 +9,38 @@
 <parameter name="browser" value="FIREFOX"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter>
+
+<test name="reportingTest" >
+    <classes>
+       <class name="com.kagrana.base.BaseActionsTest" >
+       </class>
+    </classes>
+</test>
+<test name="reportingTest1" >
+    <classes>
+       <class name="com.kagrana.base.BaseActionsTest1" >
+       </class>
+    </classes>
+</test>
+<test name="reportingTest2" >
+    <classes>
+       <class name="com.kagrana.base.BaseActionsTest2" >
+           
+       </class>
+    </classes>
+</test>
+<test name="reportingTest3" >
+    <classes>
+       <class name="com.kagrana.base.BaseActionsTest3" >
+           
+       </class>
+    </classes>
+</test>
+<test name="reportingTest4" >
+    <classes>
+       <class name="com.kagrana.base.BaseActionsTest4" >
+           
+       </class>
+    </classes>
+</test>
 </suite>
