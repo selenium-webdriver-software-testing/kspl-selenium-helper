@@ -1,9 +1,17 @@
 package com.kagrana.util;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.mail.BodyPart;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
 
 public class MiscellaneousFunctions {
 	/**
@@ -37,5 +45,43 @@ public class MiscellaneousFunctions {
 				data[i++][0] = map;
 		}
 		return data;
+	}
+	public static List<String> USPhoneNumber(String string){
+		List<String> phoneNumbers = new ArrayList<String>();
+		String regexPhone = "\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})";
+        Pattern paternPhone = Pattern.compile(regexPhone);
+        Matcher matcherPhone = paternPhone.matcher(string);
+        while(matcherPhone.find()){
+        	phoneNumbers.add(matcherPhone.group());
+        }
+		return phoneNumbers;
+	}
+	public static List<String> emailAddresses(String string){
+		List<String> emails = new ArrayList<String>();
+		String regexEmail = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+";
+        Pattern patternEmail = Pattern.compile(regexEmail);
+        Matcher matcherEmail = patternEmail.matcher(string);
+        while(matcherEmail.find()){
+       	 		emails.add(matcherEmail.group());
+        }
+		return emails;
+	}
+	public static String bodyFromMimeType(Object message) throws MessagingException, IOException{
+		String body = message.toString();
+		if(message instanceof Multipart){
+			Multipart multipart = (Multipart) message;
+			for(int x = 0; x < multipart.getCount() ; x++){
+				BodyPart bodyPart = multipart.getBodyPart(x);
+				String disposition = bodyPart.getDisposition();
+				if(disposition !=null && disposition.equals(BodyPart.ATTACHMENT))
+					continue;
+				else{
+					return
+							bodyPart.getContent().toString();
+				}
+					
+			}
+		}
+		return body;
 	}
 }

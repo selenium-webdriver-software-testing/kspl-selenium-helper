@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
  
-<suite name="Suite1" verbose="1" >
+<suite name="Suite1" verbose="1" parallel="methods" >
 <parameter name="ReportLocation" value="."></parameter>
 <parameter name="remoteURL" value="localhost"></parameter>
 <parameter name="remotePort" value="4444"></parameter>
