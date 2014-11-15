@@ -29,4 +29,16 @@ public class BaseActionsTest extends BaseActions {
 		testStep.setStepNumber("2");
 		testCase.addTestSteps(testStep);
 	}
+	@Test
+	public void reportingTest3(){
+		TestStep testStep = new TestStep();
+		testStep.setDescription("Description");
+		testStep.setExceptedData("Expected Data");
+		testStep.setActualData("Actual data");
+		testStep.setImageName("Image Name");
+		testStep.setImagePath("Image Path");
+		testStep.setResult(true);
+		testStep.setStepNumber("3");
+		testCase.addTestSteps(testStep);
+	}
 }

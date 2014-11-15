@@ -3,11 +3,12 @@ package com.kagrana.base;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -32,7 +33,7 @@ public abstract class BaseActions {
 		config = new WebDriverConfig();
 		log = new Log();
 	}
-	@BeforeTest
+	@BeforeMethod
 	@Parameters({ "remoteURL", "remotePort", "baseURL", "OS", "browser",
 			"version", "internal" })
 	public void beforeTest(String remoteURL, String remotePort, String baseURL,
@@ -52,7 +53,7 @@ public abstract class BaseActions {
 		driver.get(this.baseURL);
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void afterTest() {
 		log.addTestCase(testCase);
 		try {
