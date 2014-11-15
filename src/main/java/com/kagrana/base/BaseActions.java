@@ -3,7 +3,6 @@ package com.kagrana.base;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -23,6 +22,10 @@ public abstract class BaseActions {
 	protected String baseURL;
 	protected TestCase testCase;
 	
+	/**
+	 * This gets invoked even before suite starts.
+	 * @param ReportLocation
+	 */
 	@Parameters({"ReportLocation"})
 	@BeforeSuite
 	public void beforeSuite(@Optional String ReportLocation){
@@ -36,6 +39,7 @@ public abstract class BaseActions {
 			String OS, String browser, String version, String internal)
 			throws MalformedURLException, FileNotFoundException {
 		this.testCase = new TestCase();
+		
 		config.setRemoteURL(remoteURL);
 		config.setRemotePort(Integer.parseInt(remotePort));
 		this.baseURL = baseURL;

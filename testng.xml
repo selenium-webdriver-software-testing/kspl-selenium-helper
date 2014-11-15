@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+ 
+<suite name="Suite1" verbose="1" >
+<parameter name="ReportLocation" value="."></parameter>
+<parameter name="remoteURL" value="localhost"></parameter>
+<parameter name="remotePort" value="4444"></parameter>
+<parameter name="baseURL" value="http://www.kagrana.com/"></parameter>
+<parameter name="OS" value="WINDOWS"></parameter>
+<parameter name="browser" value="FIREFOX"></parameter>
+<parameter name="version" value="23.0"></parameter>
+<parameter name="internal" value="true"></parameter>
+</suite>
