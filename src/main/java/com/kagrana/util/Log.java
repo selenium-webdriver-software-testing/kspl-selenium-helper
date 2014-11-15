@@ -1,19 +1,23 @@
 package com.kagrana.util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
 import com.kagrana.DTO.TestCase;
+import com.kagrana.DTO.TestStep;
 import com.kagrana.DTO.TestSuite;
 import com.kagrana.DTO.TestSuiteConfig;
 import com.kagrana.reporting.ReportingType;
+import com.thoughtworks.xstream.XStream;
 
 public class Log {
 	private boolean debugEnabled = true;
 	private ReportingType reportingType;
-	private static TestSuite suite;
+	private TestSuite suite;
 	private String reportDirectory;
 	public Log(){
 		suite = new TestSuite();
@@ -76,7 +80,7 @@ public class Log {
 	public void writeReport() throws IOException{
 		if(getReportDirectory() == null){
 			File currentDir = new File(".");
-			File reportDir = new File(currentDir.getAbsolutePath() + File.pathSeparator + "reports"+File.separator);
+			File reportDir = new File(currentDir.getAbsolutePath() + "\\"+ "reports"+File.separator);
 			if(reportDir.exists()){
 					FileUtils.cleanDirectory(reportDir);
 					reportDir.delete();
@@ -91,6 +95,7 @@ public class Log {
 				else
 					this.writeError("Error creating report directory");
 			}
+			this.write(reportDir.getAbsolutePath());
 			this.setReportDirectory(reportDir.getAbsolutePath());
 		}
 		if(reportingType.equals(ReportingType.HTML))
@@ -109,7 +114,20 @@ public class Log {
 	 * Generate report in HTML file
 	 */
 	private void writeHTMLReport(String reportDirectory){
-		
+		try{
+			FileOutputStream fos = new FileOutputStream(reportDirectory + "\\" + "report.xml");
+			XStream xStream = new XStream();
+			xStream.setMode(1001);
+		    xStream.alias("TestSuite", TestSuite.class);
+		    xStream.alias("TestCase", TestCase.class);
+		    xStream.alias("TestStep", TestStep.class);
+		    xStream.toXML(this.suite, fos);
+		    fos.close();
+		}catch(FileNotFoundException fnfe){
+			this.write(fnfe);
+		}catch(Exception e){
+			this.write(e);
+		}
 	}
 
 
