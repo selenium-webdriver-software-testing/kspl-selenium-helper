@@ -15,15 +15,19 @@ public class PropertyFileManager {
 		this(log,"config.properties",IOOperations.READ);
 	}
 	public PropertyFileManager(Log log,String fileName,IOOperations ioOperations) throws IOException{
-		properties = new Properties();
+		this.properties= new Properties();
 		File inputFile = new File(fileName);
+		if(!inputFile.exists()) throw new IOException("File does not exist");
 		log.write(inputFile.getAbsolutePath());
 		InputStream is = new FileInputStream(inputFile.getAbsolutePath());
-		properties.load(is);
+		this.properties.load(is);
 		is.close();
 	}
 	public String getProperty(String propName){
-		return properties.getProperty(propName);
+		if(this.properties == null) throw new NullPointerException("Properties is null");
+		if(this.log != null)
+		log.write("Prop name: " + propName + "\tValue: " +this.properties.getProperty(propName));
+		return this.properties.getProperty(propName);
 	}
 	public void setProperty(String propName, String propValue) throws Exception{
 		log.write("Not yet implemented!");

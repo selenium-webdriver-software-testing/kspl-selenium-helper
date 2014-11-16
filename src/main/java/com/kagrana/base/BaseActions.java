@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -31,7 +33,6 @@ public abstract class BaseActions {
 	@Parameters({"ReportLocation"})
 	@BeforeSuite
 	public void beforeSuite(@Optional String ReportLocation){
-		
 		log = new Log();
 	}
 	@BeforeMethod
@@ -44,6 +45,7 @@ public abstract class BaseActions {
 		this.testCase = new TestCase();
 		this.testCase.setBrowser(browser);
 		this.testCase.setParentURL(baseURL);
+		
 		this.testCase.setTestCaseId("KT"+testCaseCount++);
 		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
@@ -59,7 +61,9 @@ public abstract class BaseActions {
 	}
 
 	@AfterMethod
-	public void afterTest() {
+	public void afterTest(ITestResult itr) {
+		testCase.setExecutionTime((itr.getEndMillis() - itr.getStartMillis()));
+		testCase.setTestCaseName(itr.getName());
 		log.write("Completed execution >>>");
 		log.addTestCase(testCase);
 		try {
@@ -74,7 +78,8 @@ public abstract class BaseActions {
 		}
 	}
 	@AfterSuite
-	public void afterSuite() throws IOException{
+	public void afterSuite(ITestContext itc) throws IOException{
+		log.setTestSuiteName(itc.getSuite().getName());
 		log.writeReport();
 	}
 

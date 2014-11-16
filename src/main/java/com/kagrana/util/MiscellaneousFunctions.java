@@ -13,6 +13,8 @@ import javax.mail.BodyPart;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
 
+import java.sql.Timestamp;
+
 public class MiscellaneousFunctions {
 	/**
 	 * This method helps form URL for webdriver
@@ -65,6 +67,10 @@ public class MiscellaneousFunctions {
        	 		emails.add(matcherEmail.group());
         }
 		return emails;
+	}
+	public static String getTimeStamp(){
+		java.util.Date date= new java.util.Date();
+		return new Timestamp(date.getTime()).toString();
 	}
 	public static String bodyFromMimeType(Object message) throws MessagingException, IOException{
 		String body = message.toString();

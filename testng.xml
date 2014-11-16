@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
  
-<suite name="Suite1" parallel="tests" thread-count="5">
+<suite name="smoke-test-suite" parallel="tests" thread-count="5">
 <parameter name="ReportLocation" value="."></parameter>
 <parameter name="remoteURL" value="localhost"></parameter>
 <parameter name="remotePort" value="4444"></parameter>
@@ -9,7 +9,13 @@
 <parameter name="browser" value="FIREFOX"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter>
-
+<test name="SingleTest" >
+    <classes>
+       <class name="com.kagrana.base.SingleTest" >
+       </class>
+    </classes>
+</test>
+<!--
 <test name="reportingTest" >
     <classes>
        <class name="com.kagrana.base.BaseActionsTest" >
@@ -43,4 +49,5 @@
        </class>
     </classes>
 </test>
+  -->
 </suite>

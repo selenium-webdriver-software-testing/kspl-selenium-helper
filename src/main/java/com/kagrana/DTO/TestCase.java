@@ -6,16 +6,15 @@ import java.util.List;
 public class TestCase
 {
   private String TestCaseName;
-  private boolean TestCaseStatus;
   private String TestCaseId;
   private String TestCaseDescription;
   private String Browser;
   private String ParentURL;
+  private long ExecutionTime;
   private List<TestStep> TestSteps;
   
   public TestCase(){
 	  this.TestCaseName = "";
-	  this.TestCaseStatus = true;
 	  this.TestCaseId = "";
 	  this.TestCaseDescription = "";
 	  this.Browser = "";
@@ -30,16 +29,6 @@ public class TestCase
   public final void setTestCaseName(String value)
   {
     this.TestCaseName = value;
-  }
-  
-  public final boolean getTestCaseStatus()
-  {
-    return this.TestCaseStatus;
-  }
-  
-  public final void setTestCaseStatus(boolean value)
-  {
-    this.TestCaseStatus = value;
   }
   
   public final String getTestCaseId()
@@ -91,4 +80,10 @@ public class TestCase
   {
     this.Browser = browserName;
   }
+public long getExecutionTime() {
+	return ExecutionTime;
+}
+public void setExecutionTime(long executionTime) {
+	ExecutionTime = executionTime;
+}
 }

@@ -1,6 +1,7 @@
 package com.kagrana.util;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,7 +20,6 @@ import org.apache.commons.io.FileUtils;
 import com.kagrana.DTO.TestCase;
 import com.kagrana.DTO.TestStep;
 import com.kagrana.DTO.TestSuite;
-import com.kagrana.DTO.TestSuiteConfig;
 import com.kagrana.reporting.ReportingType;
 import com.thoughtworks.xstream.XStream;
 
@@ -32,15 +32,8 @@ public class Log {
 		suite = new TestSuite();
 		reportingType = ReportingType.HTML;
 	}
-	/**
-	 * This function helps setup test suite configuration.
-	 * @param testSuiteConfig
-	 */
-	public void setTestSuiteConfig(TestSuiteConfig testSuiteConfig){
-		suite.setTestSuiteName(testSuiteConfig.getTestSuiteName());
-		suite.setEnvironment(testSuiteConfig.getEnvironment());
-		suite.setExecutionType(testSuiteConfig.getExecutionType());
-		suite.setTestDateTime(testSuiteConfig.getTestDateTime());
+	public void setTestSuiteName(String testSuiteName){
+		this.suite.setTestSuiteName(testSuiteName);
 	}
 	public String getReportDirectory() {
 		return reportDirectory;
@@ -146,8 +139,8 @@ public class Log {
 	      TransformerFactory tFactory = TransformerFactory.newInstance();
 	      Transformer transformer = null;
 	      Source xslFileSource = null;
-	      InputStream inputStream = getClass().getClassLoader()
-	    	        .getResourceAsStream(pfm.getProperty("reportXSLFileName"));
+	      String xslFileName = pfm.getProperty("reportXSLFileName");
+	      InputStream inputStream = new FileInputStream(xslFileName);
 	      xslFileSource = new StreamSource(inputStream);
 	      transformer = tFactory.newTransformer(xslFileSource);
 	      transformer.transform(new StreamSource(

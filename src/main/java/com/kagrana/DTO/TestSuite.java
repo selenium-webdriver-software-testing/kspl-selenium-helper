@@ -3,19 +3,17 @@ package com.kagrana.DTO;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kagrana.util.MiscellaneousFunctions;
+
 public class TestSuite
 {
   private String TestSuiteName;
-  private String Environment;
-  private String ExecutionType;
   private String TestDateTime;
   private List<TestCase> TestCases;
   
   public TestSuite(){
 	  TestSuiteName = "";
-	  Environment = "";
-	  ExecutionType = "";
-	  TestDateTime = "";
+	  TestDateTime = MiscellaneousFunctions.getTimeStamp();
 	  TestCases = new ArrayList<TestCase>();	  
   }
   public final String getTestSuiteName()
@@ -28,16 +26,6 @@ public class TestSuite
     this.TestSuiteName = value;
   }
   
-  public final String getEnvironment()
-  {
-    return this.Environment;
-  }
-  
-  public final void setEnvironment(String value)
-  {
-    this.Environment = value;
-  }
-  
   public final String getTestDateTime()
   {
     return this.TestDateTime;
@@ -48,15 +36,6 @@ public class TestSuite
     this.TestDateTime = value;
   }
   
-  public final String getExecutionType()
-  {
-    return this.ExecutionType;
-  }
-  
-  public final void setExecutionType(String executionType)
-  {
-    this.ExecutionType = executionType;
-  }
   public List<TestCase> getTestCases() {
 		return TestCases;
   }
