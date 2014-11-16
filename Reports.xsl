@@ -7,12 +7,28 @@
   <head><title><xsl:value-of select="TestSuite/TestSuiteName"/> - Report</title></head>
   <body>
   <h2><xsl:value-of select="TestSuite/TestSuiteName"/></h2>
+  <table>
+  <tr>
+  <td>
   <p>Start time: <xsl:value-of select="TestSuite/TestDateTime"/></p>
+  </td>
+  <td>
   <p><xsl:value-of select="count(TestSuite/TestCases/TestCase)"></xsl:value-of> tests.</p>
+  </td>
+  </tr>
+  </table>
   <hr />
   <xsl:for-each select="TestSuite/TestCases/TestCase">
+  <table>
+  <tr>
+  <td>
   	<p>Test Case ID: <xsl:value-of select="TestCaseId"/></p>
+  	</td><td>
     <p>Test case name: <xsl:value-of select="TestCaseName"/></p>
+    </td>
+   </tr>
+   <tr>
+   <td>
     <p>Test Case Status: 
     	<xsl:choose>
     	  <xsl:when test="count(TestSteps/TestStep[Result='false']) > 0">
@@ -21,10 +37,23 @@
    		  <xsl:otherwise><font color="green">Passed</font></xsl:otherwise>
    		</xsl:choose>
     </p>
+    </td><td>
     <p>Execution time: <xsl:value-of select="ExecutionTime div 1000"></xsl:value-of> sec</p>
+    </td>
+    </tr>
+    <tr>
+    <td>
     <p>Test Case Description: <xsl:value-of select="TestCaseDescription"/></p>
+    </td><td>
     <p>Execution Environment: <xsl:value-of select="ExecutionEnvironment"/></p>
+    </td>
+    </tr>
+    <tr>
+    <td>
     <p>Application Base URL: <xsl:value-of select="ParentURL"/></p>
+    </td>
+    </tr>
+    </table>
     <table border="1">
       <tr bgcolor="#9acd32">
         <th style="text-align:left">StepNumber</th>
