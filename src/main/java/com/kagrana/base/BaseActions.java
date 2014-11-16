@@ -41,11 +41,9 @@ public abstract class BaseActions {
 	public void beforeTest(String remoteURL, String remotePort, String baseURL,
 			String OS, String browser, String version, String internal)
 			throws MalformedURLException, FileNotFoundException {
-		log.write("Executing Test >>>>>");
 		this.testCase = new TestCase();
-		this.testCase.setBrowser(browser);
+		this.testCase.setExecutionEnvironment("{browser:"+browser+",browserVersion:"+version+",OperatingSystem:"+OS+"}");
 		this.testCase.setParentURL(baseURL);
-		
 		this.testCase.setTestCaseId("KT"+testCaseCount++);
 		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
@@ -64,7 +62,6 @@ public abstract class BaseActions {
 	public void afterTest(ITestResult itr) {
 		testCase.setExecutionTime((itr.getEndMillis() - itr.getStartMillis()));
 		testCase.setTestCaseName(itr.getName());
-		log.write("Completed execution >>>");
 		log.addTestCase(testCase);
 		try {
 			driver.close();

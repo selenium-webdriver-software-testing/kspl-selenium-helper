@@ -2,7 +2,7 @@ package com.kagrana.DTO;
 
 public class TestStep
 {
-  private String StepNumber;
+  private int StepNumber;
   private String Description;
   private String ExceptedData;
   private String ActualData;
@@ -11,7 +11,6 @@ public class TestStep
   private boolean Result;
   
   public TestStep(){
-	  this.StepNumber = "";
 	  this.Description = "";
 	  this.ExceptedData = "";
 	  this.ActualData = "";
@@ -19,12 +18,12 @@ public class TestStep
 	  this.ImagePath = "";
 	  this.Result = true;
   }
-  public final String getStepNumber()
+  public final int getStepNumber()
   {
     return this.StepNumber;
   }
   
-  public final void setStepNumber(String value)
+  public final void setStepNumber(int value)
   {
     this.StepNumber = value;
   }
