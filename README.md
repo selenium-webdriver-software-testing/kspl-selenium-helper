@@ -11,4 +11,6 @@ This library is intended to make job of selenium webdriver user easy. This can b
 - HTML report / Excel reporting
 - Reading data from Excel file or CSV file TestNG
 
-contact <mayur@kagrana.com> for any questions.
+Contact
+Contact Mayur Shah: http://kagrana.com/company/contact-us/contact-mayur-shah/
+Ask us a technical question: http://kagrana.com/questions/ask
