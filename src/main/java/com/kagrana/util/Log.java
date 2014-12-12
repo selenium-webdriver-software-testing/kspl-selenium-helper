@@ -35,7 +35,27 @@ public class Log {
 	public void setTestSuiteName(String testSuiteName){
 		this.suite.setTestSuiteName(testSuiteName);
 	}
-	public String getReportDirectory() {
+	public String getReportDirectory() throws IOException {
+		if(reportDirectory == null){
+				File currentDir = new File(".");
+				File reportDir = new File(currentDir.getAbsolutePath() + "\\"+ "reports"+File.separator);
+				if(reportDir.exists()){
+						FileUtils.cleanDirectory(reportDir);
+						reportDir.delete();
+						if(reportDir.mkdir())
+							this.write("Report directory created!");
+						else
+							this.writeError("Error creating report directory");
+					}
+				else{
+					if(reportDir.mkdir())
+						this.write("Report directory created!");
+					else
+						this.writeError("Error creating report directory");
+				}
+				this.write(reportDir.getAbsolutePath());
+				this.setReportDirectory(reportDir.getAbsolutePath());
+			}
 		return reportDirectory;
 	}
 	/**
@@ -80,26 +100,6 @@ public class Log {
 			System.err.println(message);
 	}
 	public void writeReport() throws IOException{
-		if(getReportDirectory() == null){
-			File currentDir = new File(".");
-			File reportDir = new File(currentDir.getAbsolutePath() + "\\"+ "reports"+File.separator);
-			if(reportDir.exists()){
-					FileUtils.cleanDirectory(reportDir);
-					reportDir.delete();
-					if(reportDir.mkdir())
-						this.write("Report directory created!");
-					else
-						this.writeError("Error creating report directory");
-				}
-			else{
-				if(reportDir.mkdir())
-					this.write("Report directory created!");
-				else
-					this.writeError("Error creating report directory");
-			}
-			this.write(reportDir.getAbsolutePath());
-			this.setReportDirectory(reportDir.getAbsolutePath());
-		}
 		if(reportingType.equals(ReportingType.HTML))
 			writeHTMLReport(getReportDirectory());
 		else

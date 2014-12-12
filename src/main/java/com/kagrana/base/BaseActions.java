@@ -1,9 +1,6 @@
 package com.kagrana.base;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -40,11 +37,12 @@ public abstract class BaseActions {
 			"version", "internal" })
 	public void beforeTest(String remoteURL, String remotePort, String baseURL,
 			String OS, String browser, String version, String internal)
-			throws MalformedURLException, FileNotFoundException {
+			throws IOException {
 		this.testCase = new TestCase();
 		this.testCase.setExecutionEnvironment("{browser:"+browser+",browserVersion:"+version+",OperatingSystem:"+OS+"}");
 		this.testCase.setParentURL(baseURL);
 		this.testCase.setTestCaseId("KT"+testCaseCount++);
+		this.testCase.setScreenshotDirectory(log.getReportDirectory()+"\\images");
 		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
 		config.setRemotePort(Integer.parseInt(remotePort));

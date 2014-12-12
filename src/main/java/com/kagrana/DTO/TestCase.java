@@ -1,7 +1,11 @@
 package com.kagrana.DTO;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.io.FileUtils;
 
 public class TestCase {
 	private String TestCaseName;
@@ -12,6 +16,7 @@ public class TestCase {
 	private long ExecutionTime;
 	private List<TestStep> TestSteps;
 	private int testStepsCounter;
+	private String screenshotDirectory;
 
 	public TestCase() {
 		this.testStepsCounter = 1;
@@ -74,6 +79,10 @@ public class TestCase {
 		this.TestSteps.add(this.getTestStep(description, expected, actual,
 				result));
 	}
+	public final void addTestStepWithImage(String description, String expected,
+			String actual, boolean result){
+		
+	}
 
 	public long getExecutionTime() {
 		return ExecutionTime;
@@ -89,5 +98,25 @@ public class TestCase {
 
 	public void setExecutionEnvironment(String executionEnvironment) {
 		ExecutionEnvironment = executionEnvironment;
+	}
+
+	public String getScreenshotDirectory() {
+		return screenshotDirectory;
+	}
+
+	public void setScreenshotDirectory(String screenshotDirectory) throws IOException {
+		if(this.screenshotDirectory == null){
+			File file = new File(screenshotDirectory);
+			if(file.exists()){
+				FileUtils.cleanDirectory(file);
+				file.delete();
+				file.mkdir();
+			}
+			else{
+				file.mkdir();
+			}
+			
+		}
+		this.screenshotDirectory = screenshotDirectory;
 	}
 }
