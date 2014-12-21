@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -165,6 +167,15 @@ public class Log {
 	    	this.write(e);
 	    }
 	}
-	
+	public void zipAndEmailFile() throws IOException{
+		File directoryToZip = new File(getReportDirectory());
+		ZipUtil zipUtil = new ZipUtil(this);
+		List<File> fileList = new ArrayList<File>();
+		this.write(("---Getting references to all files in: " + directoryToZip.getCanonicalPath()));
+		zipUtil.getAllFiles(directoryToZip, fileList);
+		this.write("---Creating zip file");
+		zipUtil.writeZipFile(directoryToZip, fileList);
+		System.out.println("---Done");
+	}
 
 }

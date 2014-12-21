@@ -76,6 +76,7 @@ public abstract class BaseActions {
 	public void afterSuite(ITestContext itc) throws IOException{
 		log.setTestSuiteName(itc.getSuite().getName());
 		log.writeReport();
+		log.zipAndEmailFile();
 	}
 
 }
