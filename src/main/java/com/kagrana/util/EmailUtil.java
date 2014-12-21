@@ -12,13 +12,14 @@ import javax.mail.MessagingException;
 import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-public class EmailUtil {
+import com.sun.mail.smtp.SMTPTransport;
+
+public class EmailUtil{
 	private Log log;
 	private String to;
 	private String from;
@@ -28,6 +29,7 @@ public class EmailUtil {
 	private String fileAttachment;
 	private boolean enableSSL;
 	private PropertyFileManager pfm;
+	private Session session;
 
 	public EmailUtil(Log log) throws IOException {
 		this.log = log;
@@ -43,13 +45,12 @@ public class EmailUtil {
 		this.setTo(toEmail);
 		this.setFileAttachment(fileAttachment);
 		Properties props = new Properties();
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", this.isEnableSSL());
-		props.put("mail.smtp.host", this.getHost());
-		props.put("mail.smtp.port", this.port);
+		//props.put("mail.smtp.auth", "true");
+		//props.put("mail.smtp.starttls.enable", this.isEnableSSL());
+		//props.put("mail.smtp.host", this.getHost());
+		//props.put("mail.smtp.port", this.port);
 
-		// Get the Session object.
-		Session session = Session.getInstance(props,
+		session = Session.getInstance(props,
 				new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
 						return new PasswordAuthentication(getFrom(),
@@ -96,7 +97,7 @@ public class EmailUtil {
 			message.setContent(multipart);
 
 			// Send message
-			Transport.send(message);
+			send(message);
 
 			log.write("Sent message successfully....");
 
@@ -104,7 +105,19 @@ public class EmailUtil {
 			throw new RuntimeException(e);
 		}
 	}
-
+	private void send(Message msg) throws MessagingException
+	  {
+	    SMTPTransport t = (SMTPTransport) session.getTransport("smtps");
+	    try
+	    {
+	      t.connect(this.getHost(), this.getFrom(), this.getPassword());
+	      t.sendMessage(msg, msg.getAllRecipients());
+	    } finally
+	    {
+	      System.out.println("Response: " + t.getLastServerResponse());
+	      t.close();
+	    }
+	  }
 	public String getFileAttachment() {
 		return fileAttachment;
 	}
