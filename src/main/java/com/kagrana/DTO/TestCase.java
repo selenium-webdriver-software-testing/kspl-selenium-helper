@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.WebDriver;
+
+import com.kagrana.util.MiscellaneousFunctions;
 
 public class TestCase {
 	private String TestCaseName;
@@ -73,15 +76,21 @@ public class TestCase {
 		testStep.setResult(result);
 		return testStep;
 	}
-
+	private final TestStep getTestStepWithImage(WebDriver driver, String description, String expected,
+			String actual, boolean result ) throws IOException{
+		TestStep testStep = this.getTestStep(description, expected, actual, result);
+		testStep.setImageName("image");
+		testStep.setImagePath(MiscellaneousFunctions.captureScreenshot(driver, getScreenshotDirectory()));
+		return testStep;
+	}
 	public final void addTestSteps(String description, String expected,
 			String actual, boolean result) {
 		this.TestSteps.add(this.getTestStep(description, expected, actual,
 				result));
 	}
-	public final void addTestStepWithImage(String description, String expected,
-			String actual, boolean result){
-		
+	public final void addTestStepWithImage(WebDriver driver, String description, String expected,
+			String actual, boolean result) throws IOException{
+		this.TestSteps.add(this.getTestStepWithImage(driver, description, expected, actual, result));
 	}
 
 	public long getExecutionTime() {

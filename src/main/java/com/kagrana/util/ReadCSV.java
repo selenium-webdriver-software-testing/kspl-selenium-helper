@@ -38,7 +38,7 @@ public class ReadCSV {
 		try {
 			String[] keys;
 			br = new BufferedReader(new FileReader(this.fileName));
-			HashMap<String, String> map = new HashMap<String, String>();
+			HashMap<String, String> map =null;
 			// Read first line from CSV file and use it as key
 			if ((line = br.readLine()) != null) {
 				keys = line.split(cvsSplitBy);
@@ -46,6 +46,7 @@ public class ReadCSV {
 				return null;
 			// Read each line after first line and use it as values
 			while ((line = br.readLine()) != null) {
+				map = new HashMap<String, String>();
 				String[] values = line.split(cvsSplitBy);
 				for (int i = 0; i < keys.length; i++) {
 					// Store key and values to hash map

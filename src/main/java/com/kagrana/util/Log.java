@@ -112,6 +112,7 @@ public class Log {
 		
 		
 	}
+	
 	/**
 	 * Generate report in HTML file
 	 */

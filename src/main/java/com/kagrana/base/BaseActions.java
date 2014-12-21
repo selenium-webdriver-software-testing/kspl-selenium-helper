@@ -55,7 +55,7 @@ public abstract class BaseActions {
 		driver.manage().window().maximize();
 		driver.get(this.baseURL);
 	}
-
+	
 	@AfterMethod
 	public void afterTest(ITestResult itr) {
 		testCase.setExecutionTime((itr.getEndMillis() - itr.getStartMillis()));
