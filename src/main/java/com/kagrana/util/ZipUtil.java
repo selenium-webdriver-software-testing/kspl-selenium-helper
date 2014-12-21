@@ -34,11 +34,12 @@ public class ZipUtil {
 		}
 	}
 
-	public void writeZipFile(File directoryToZip, List<File> fileList) {
-
+	public String writeZipFile(File directoryToZip, List<File> fileList) {
+		String zipFileName =
+				directoryToZip.getName() + "_" + UUID.randomUUID() + ".zip";
 		try {
 			FileOutputStream fos = new FileOutputStream(
-					directoryToZip.getName() + "_" + UUID.randomUUID() + ".zip");
+					zipFileName);
 			ZipOutputStream zos = new ZipOutputStream(fos);
 
 			for (File file : fileList) {
@@ -50,10 +51,11 @@ public class ZipUtil {
 			zos.close();
 			fos.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			log.write(e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			log.write(e);
 		}
+		return zipFileName;
 	}
 
 	private void addToZip(File directoryToZip, File file, ZipOutputStream zos)

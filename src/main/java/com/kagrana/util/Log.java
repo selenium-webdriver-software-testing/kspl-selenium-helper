@@ -174,8 +174,10 @@ public class Log {
 		this.write(("---Getting references to all files in: " + directoryToZip.getCanonicalPath()));
 		zipUtil.getAllFiles(directoryToZip, fileList);
 		this.write("---Creating zip file");
-		zipUtil.writeZipFile(directoryToZip, fileList);
-		System.out.println("---Done");
+		String fileAttachment = zipUtil.writeZipFile(directoryToZip, fileList);
+		this.write("---Done");
+		EmailUtil emailUtil = new EmailUtil(this);
+		emailUtil.sendEmail("mail@mayurshah.in", fileAttachment);
 	}
 
 }
