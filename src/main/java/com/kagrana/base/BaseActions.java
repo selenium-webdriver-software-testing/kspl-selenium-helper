@@ -33,9 +33,9 @@ public abstract class BaseActions {
 		log = new Log();
 	}
 	@BeforeMethod
-	@Parameters({ "remoteURL", "remotePort", "baseURL", "OS", "browser",
+	@Parameters({ "remoteURL", "baseURL", "OS", "browser",
 			"version", "internal" })
-	public void beforeTest(String remoteURL, String remotePort, String baseURL,
+	public void beforeTest(String remoteURL, String baseURL,
 			String OS, String browser, String version, String internal)
 			throws IOException {
 		this.testCase = new TestCase();
