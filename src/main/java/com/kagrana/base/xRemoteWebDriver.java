@@ -7,7 +7,6 @@ import java.net.URL;
 import java.util.Map;
 
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -48,7 +47,7 @@ public class xRemoteWebDriver extends RemoteWebDriver {
 		  if(!config.isIntenal()){
 			  DesiredCapabilities cap = new DesiredCapabilities();
 			  cap.setBrowserName(config.getBrowserName());
-			  cap.setPlatform(Platform.valueOf(config.getOS()));
+			  cap.setCapability("platform", config.getOS());
 			  cap.setVersion(config.getBrowserVersion());
 			  return 
 					  new xRemoteWebDriver(new URL(config.getRemoteURL()), cap, log);
