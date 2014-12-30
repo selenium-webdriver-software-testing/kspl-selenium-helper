@@ -65,7 +65,7 @@ public class ZipUtil {
 		String zipFilePath = file.getCanonicalPath().substring(
 				directoryToZip.getCanonicalPath().length() + 1,
 				file.getCanonicalPath().length());
-		log.write("Writing '" + zipFilePath + "' to zip file");
+		log.write("Adding '" + zipFilePath + "' to zip file");
 		ZipEntry zipEntry = new ZipEntry(zipFilePath);
 		zos.putNextEntry(zipEntry);
 
