@@ -45,7 +45,6 @@ public abstract class BaseActions {
 		this.testCase.setScreenshotDirectory(log.getReportDirectory()+"\\images");
 		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
-		config.setRemotePort(Integer.parseInt(remotePort));
 		this.baseURL = baseURL;
 		config.setOS(OS);
 		config.setBrowserName(browser);

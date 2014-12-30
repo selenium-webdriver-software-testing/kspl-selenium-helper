@@ -20,7 +20,6 @@ import org.openqa.selenium.remote.Response;
 
 import com.kagrana.DTO.WebDriverConfig;
 import com.kagrana.util.Log;
-import com.kagrana.util.MiscellaneousFunctions;
 
 
 
@@ -52,7 +51,7 @@ public class xRemoteWebDriver extends RemoteWebDriver {
 			  cap.setPlatform(Platform.valueOf(config.getOS()));
 			  cap.setVersion(config.getBrowserVersion());
 			  return 
-					  new xRemoteWebDriver(MiscellaneousFunctions.getWebDriverURL(config.getRemoteURL(), config.getRemotePort()), cap, log);
+					  new xRemoteWebDriver(new URL(config.getRemoteURL()), cap, log);
 		  }
 		  else{
 			  File chromeDriver = new File("drivers\\chromedriver.exe");

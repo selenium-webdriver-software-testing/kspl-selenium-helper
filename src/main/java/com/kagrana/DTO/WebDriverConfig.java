@@ -1,7 +1,6 @@
 package com.kagrana.DTO;
 
 public class WebDriverConfig {
-	private int remotePort;
 	private boolean intenal;
 	private String remoteURL;
 	private String TestCaseName;
@@ -9,12 +8,6 @@ public class WebDriverConfig {
 	private String OS;
 	private String browserVersion;
 	
-	public int getRemotePort() {
-		return remotePort;
-	}
-	public void setRemotePort(int remotePort) {
-		this.remotePort = remotePort;
-	}
 	public boolean isIntenal() {
 		return intenal;
 	}
