@@ -31,17 +31,27 @@ public class EmailUtil{
 	private PropertyFileManager pfm;
 	private Session session;
 
-	public EmailUtil(Log log) throws IOException {
+	public EmailUtil(Log log){
 		this.log = log;
-		this.pfm = new PropertyFileManager(this.log);
-		this.setHost(pfm.getProperty("smtpserver"));
-		this.port = pfm.getProperty("smtpport");
-		this.setEnableSSL(Boolean.parseBoolean(pfm.getProperty("smtpenablessl")));
-		this.setFrom(pfm.getProperty("smtpusername"));
-		this.setPassword(pfm.getProperty("smtppassword"));
+		try {
+			this.pfm = new PropertyFileManager(this.log);
+		} catch (IOException e) {
+			log.writeError("Property file does not exist! Not sending an email.");
+			log.write(e);
+		}
+		if(pfm!=null){
+			this.setHost(pfm.getProperty("smtpserver"));
+			this.port = pfm.getProperty("smtpport");
+			this.setEnableSSL(Boolean.parseBoolean(pfm.getProperty("smtpenablessl")));
+			this.setFrom(pfm.getProperty("smtpusername"));
+			this.setPassword(pfm.getProperty("smtppassword"));
+			if(pfm.getProperty("sendemail").equals("false"))
+				this.pfm = null;
+		}
 	}
 
 	public void sendEmail(String toEmail, String fileAttachment) {
+		if(this.pfm == null) return;
 		this.setTo(toEmail);
 		this.setFileAttachment(fileAttachment);
 		Properties props = new Properties();
