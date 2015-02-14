@@ -16,3 +16,8 @@ Contact:
 Contact Mayur Shah: http://kagrana.com/company/contact-us/contact-mayur-shah/.
 
 Ask us a technical question: http://kagrana.com/questions/ask.
+
+TODO: Pending implementations
+=============================
+* Overwrite TestNG assertion classes to implement reporting. 
+* Implement PageObject repository using Excel
