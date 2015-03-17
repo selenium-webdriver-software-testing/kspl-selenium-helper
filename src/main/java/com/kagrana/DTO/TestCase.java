@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 
 import com.kagrana.util.MiscellaneousFunctions;
@@ -116,15 +115,9 @@ public class TestCase {
 	public void setScreenshotDirectory(String screenshotDirectory) throws IOException {
 		if(this.screenshotDirectory == null){
 			File file = new File(screenshotDirectory);
-			if(file.exists()){
-				FileUtils.cleanDirectory(file);
-				file.delete();
+			if(!file.exists()){
 				file.mkdir();
 			}
-			else{
-				file.mkdir();
-			}
-			
 		}
 		this.screenshotDirectory = screenshotDirectory;
 	}
