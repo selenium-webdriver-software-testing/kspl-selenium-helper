@@ -1,6 +1,8 @@
 package com.kagrana.base;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -30,6 +32,7 @@ public abstract class BaseActions {
 	@Parameters({"ReportLocation"})
 	@BeforeSuite
 	public void beforeSuite(@Optional String ReportLocation){
+
 		log = new Log();
 	}
 	@BeforeMethod
@@ -52,6 +55,7 @@ public abstract class BaseActions {
 		config.setIntenal(Boolean.parseBoolean(internal));
 		driver = xRemoteWebDriver.getInstance(config, log);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(this.baseURL);
 	}
 	
