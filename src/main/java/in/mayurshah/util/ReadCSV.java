@@ -19,7 +19,7 @@ public class ReadCSV {
 	
 	/**
 	 * Constructor
-	 * @param fileName
+	 * @param fileName -Enter location of your CSV file
 	 */
 	public ReadCSV(String fileName) {
 		this.fileName = fileName;
@@ -28,7 +28,7 @@ public class ReadCSV {
 	 * First value is your key and each row is your value.
 	 * Size of Hashmap is = no of rows - 1(headers)
 	 * 
-	 * @return this will return list of hashmap
+	 * @return -this will return list of hashmap
 	 */
 	public List<HashMap<String, String>> run() {
 		List<HashMap<String, String>> mapList = new ArrayList<HashMap<String, String>>();

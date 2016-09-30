@@ -62,14 +62,14 @@ public class Log {
 	}
 	/**
 	 * Set up report directory. Default is report;
-	 * @param reportDirectory
+	 * @param reportDirectory -Contains location where reports has to be stored
 	 */
 	public void setReportDirectory(String reportDirectory){
 		this.reportDirectory = reportDirectory;
 	}
 	/**
 	 * This function will add TestCase to TestSuite
-	 * @param testCase
+	 * @param testCase -Initiate the test case
 	 */
 	public void addTestCase(TestCase testCase){
 		suite.addTestCases(testCase);

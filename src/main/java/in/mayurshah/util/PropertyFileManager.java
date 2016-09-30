@@ -8,6 +8,10 @@ import java.util.Properties;
 
 import in.mayurshah.DTO.IOOperations;
 
+/**
+ * This class is developed mainly to manage property file.
+ */
+
 public class PropertyFileManager {
 	Properties properties = null;
 	Log log;

@@ -27,7 +27,7 @@ public abstract class BaseActions {
 	
 	/**
 	 * This gets invoked even before suite starts.
-	 * @param ReportLocation
+	 * @param ReportLocation - Provide location where you want to store the report
 	 */
 	@Parameters({"ReportLocation"})
 	@BeforeSuite

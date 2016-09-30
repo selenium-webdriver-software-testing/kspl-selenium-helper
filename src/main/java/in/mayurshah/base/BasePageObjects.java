@@ -120,6 +120,8 @@ public class BasePageObjects {
 
 	/**
 	 * Function to explicitly wait for an element to be clickable
+	 *
+	 * @param log -To log steps.
 	 * 
 	 * @param driver
 	 *            -WebDriver currently in use by script

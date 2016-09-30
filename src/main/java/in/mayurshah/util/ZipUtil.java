@@ -10,13 +10,26 @@ import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * This file is used to zip your directory.
+ * @author qamate
+ */
 public class ZipUtil {
 	private Log log;
 
+	/**
+	 *
+	 * @param log -Pass your log instence
+     */
 	public ZipUtil(Log log) {
 		this.log = log;
 	}
 
+	/**
+	 * This function adds all files inside the directory to your existing list of files
+	 * @param dir -Enter the directory from which you want to list files
+	 * @param fileList -pass your existing list where we will append new identified files
+     */
 	public void getAllFiles(File dir, List<File> fileList) {
 		try {
 			File[] files = dir.listFiles();
@@ -34,6 +47,12 @@ public class ZipUtil {
 		}
 	}
 
+	/**
+	 * This function helps you create zip file from list of files
+	 * @param directoryToZip -Enter location of the directory you want to zip
+	 * @param fileList -Enter list of files you want to zip from that directory
+     * @return -Returns location of zip file.
+     */
 	public String writeZipFile(File directoryToZip, List<File> fileList) {
 		String zipFileName =
 				directoryToZip.getName() + "_" + UUID.randomUUID() + ".zip";

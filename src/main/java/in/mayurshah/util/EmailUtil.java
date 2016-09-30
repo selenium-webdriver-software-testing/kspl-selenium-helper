@@ -19,6 +19,9 @@ import javax.mail.internet.MimeMultipart;
 
 import com.sun.mail.smtp.SMTPTransport;
 
+/**
+ * This is email utility file to send generated report as an email.
+ */
 public class EmailUtil{
 	private Log log;
 	private String to;

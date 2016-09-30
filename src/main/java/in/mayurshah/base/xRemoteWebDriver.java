@@ -16,7 +16,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import in.mayurshah.util.Log;
 
-
+/**
+ * This file extends RemoteWebDriver. This is mainly to generate the log and manage instance of existing driver.
+ */
 
 public class xRemoteWebDriver extends RemoteWebDriver {
 		

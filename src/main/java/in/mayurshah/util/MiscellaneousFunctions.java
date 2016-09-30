@@ -22,13 +22,16 @@ import org.openqa.selenium.WebDriver;
 
 import java.sql.Timestamp;
 
+/**
+ * MiscellaneousFunctions, as the name says, contains functions which can be used frequently and are independent.
+ */
 public class MiscellaneousFunctions {
 	/**
 	 * This method helps form URL for webdriver
 	 * 
-	 * @param remoteURL
-	 * @param port
-	 * @return
+	 * @param remoteURL -Enter remote URL, e.g. in.mayurshah
+	 * @param port - Enter your port
+	 * @return - returns fully qualified Grid URL
 	 * @throws MalformedURLException
 	 */
 	public static URL getWebDriverURL(String remoteURL, int port)
@@ -45,9 +48,8 @@ public class MiscellaneousFunctions {
 	/**
 	 * This function is mainly used by TestNG data provider
 	 * 
-	 * @param mapList
-	 * @param log
-	 * @return
+	 * @param mapList -Pass the list of hasmap as parameter
+	 * @return -It will return two dimension array of an Object.
 	 */
 	public static Object[][] listHashMapToObject(
 			List<HashMap<String, String>> mapList) {
@@ -59,6 +61,11 @@ public class MiscellaneousFunctions {
 		return data;
 	}
 
+	/**
+	 * This function is used to identify US Phone number from the string
+	 * @param string -Provide your string
+	 * @return - Identifies phone numbers and returns the same.
+     */
 	public static List<String> USPhoneNumber(String string) {
 		List<String> phoneNumbers = new ArrayList<String>();
 		String regexPhone = "\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})";
@@ -70,6 +77,11 @@ public class MiscellaneousFunctions {
 		return phoneNumbers;
 	}
 
+	/**
+	 * This function accepts a string and identify email address and return the same.
+	 * @param string -Provide string
+	 * @return -list of email addresses
+     */
 	public static List<String> emailAddresses(String string) {
 		List<String> emails = new ArrayList<String>();
 		String regexEmail = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+";
@@ -81,11 +93,22 @@ public class MiscellaneousFunctions {
 		return emails;
 	}
 
+	/**
+	 * This function gets current Time Stamp as String
+	 * @return -Time Stamp as String
+     */
 	public static String getTimeStamp() {
 		java.util.Date date = new java.util.Date();
 		return new Timestamp(date.getTime()).toString();
 	}
 
+	/**
+	 * This function returns string of the body from Mime Type
+	 * @param message -Pass your message
+	 * @return -Get string of the body.
+	 * @throws MessagingException
+	 * @throws IOException
+     */
 	public static String bodyFromMimeType(Object message)
 			throws MessagingException, IOException {
 		String body = message.toString();
@@ -106,6 +129,11 @@ public class MiscellaneousFunctions {
 		return body;
 	}
 
+	/**
+	 * Thiss function is used to get file name from given URL
+	 * @param URL -Enter URL
+     * @return -Returns file name
+     */
 	public static String getFileNameFromURL(String URL) {
 		String fileName = "";
 		String[] path = URL.split("/");
@@ -119,6 +147,13 @@ public class MiscellaneousFunctions {
 		return fileName;
 	}
 
+	/**
+	 * This function is used to capture screenshot and store it in directory
+	 * @param driver -Pass your WebDriver instance.
+	 * @param screenshotdir - Pass your screenshot directory
+	 * @return - Returns location where screenshot is stored.
+	 * @throws IOException
+     */
 	public static String captureScreenshot(WebDriver driver,
 			String screenshotdir) throws IOException {
 		String randomUUID = UUID.randomUUID().toString();
