@@ -1,0 +1,302 @@
+[INFO] Scanning for projects...
+[INFO] Inspecting build with total of 1 modules...
+[INFO] Installing Nexus Staging features:
+[INFO]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building selenium-helper 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ selenium-helper ---
+[INFO] Deleting C:\Users\mayurb\workspace\kspl-selenium-helper\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ selenium-helper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ selenium-helper ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 15 source files to C:\Users\mayurb\workspace\kspl-selenium-helper\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ selenium-helper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\mayurb\workspace\kspl-selenium-helper\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ selenium-helper ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to C:\Users\mayurb\workspace\kspl-selenium-helper\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ selenium-helper ---
+[INFO] Surefire report directory: C:\Users\mayurb\workspace\kspl-selenium-helper\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNGMapConfigurator@6a6824be
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:200::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 138
+Key:	field8	Value: 36
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:200:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: JP
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:208::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 103.8
+Key:	field8	Value: 1.3667
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:208:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: SG
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:218::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 138
+Key:	field8	Value: 36
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:218:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: JP
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:220::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 127.5
+Key:	field8	Value: 37
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:220:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: KR
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Report directory created!
+C:\Users\mayurb\workspace\kspl-selenium-helper\.\reports
+C:\Users\mayurb\workspace\kspl-selenium-helper\config.properties
+---Getting references to all files in: C:\Users\mayurb\workspace\kspl-selenium-helper\reports
+     file:C:\Users\mayurb\workspace\kspl-selenium-helper\reports\report.html
+     file:C:\Users\mayurb\workspace\kspl-selenium-helper\reports\report.xml
+---Creating zip file
+Adding 'report.html' to zip file
+Adding 'report.xml' to zip file
+---Done
+C:\Users\mayurb\workspace\kspl-selenium-helper\config.properties
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.161 sec
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ selenium-helper ---
+[INFO] Building jar: C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar
+[INFO] 
+[INFO] --- maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ selenium-helper ---
+[INFO] Building jar: C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-sources.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.9.1:jar (attach-javadocs) @ selenium-helper ---
+[INFO] 
+Loading source files for package in.mayurshah.base...
+Loading source files for package in.mayurshah.DTO...
+Loading source files for package in.mayurshah.reporting...
+Loading source files for package in.mayurshah.util...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_91
+Building tree for all the packages and classes...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\BaseActions.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\BasePageObjects.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\xRemoteWebDriver.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\IOOperations.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\TestCase.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\TestStep.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\TestSuite.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\WebDriverConfig.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\ReportingType.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\EmailUtil.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\Log.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\MiscellaneousFunctions.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\PropertyFileManager.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\ReadCSV.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\ZipUtil.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\overview-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\package-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\package-summary.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\package-tree.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\package-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\package-summary.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\package-tree.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\package-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\package-summary.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\package-tree.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\package-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\package-summary.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\package-tree.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\constant-values.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\class-use\xRemoteWebDriver.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\class-use\BasePageObjects.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\class-use\BaseActions.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\class-use\WebDriverConfig.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\class-use\TestSuite.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\class-use\TestStep.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\class-use\TestCase.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\class-use\IOOperations.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\class-use\ReportingType.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\ZipUtil.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\ReadCSV.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\PropertyFileManager.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\MiscellaneousFunctions.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\Log.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\class-use\EmailUtil.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\base\package-use.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\DTO\package-use.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\reporting\package-use.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\in\mayurshah\util\package-use.html...
+Building index for all the packages and classes...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\overview-tree.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\index-all.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\deprecated-list.html...
+Building index for all classes...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\allclasses-frame.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\allclasses-noframe.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\index.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\overview-summary.html...
+Generating C:\Users\mayurb\workspace\kspl-selenium-helper\target\apidocs\help-doc.html...
+4 warnings
+[WARNING] Javadoc Warnings
+[WARNING] C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\java\in\mayurshah\util\MiscellaneousFunctions.java:35: warning: no description for @throws
+[WARNING] * @throws MalformedURLException
+[WARNING] ^
+[WARNING] C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\java\in\mayurshah\util\MiscellaneousFunctions.java:109: warning: no description for @throws
+[WARNING] * @throws MessagingException
+[WARNING] ^
+[WARNING] C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\java\in\mayurshah\util\MiscellaneousFunctions.java:110: warning: no description for @throws
+[WARNING] * @throws IOException
+[WARNING] ^
+[WARNING] C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\java\in\mayurshah\util\MiscellaneousFunctions.java:155: warning: no description for @throws
+[WARNING] * @throws IOException
+[WARNING] ^
+[INFO] Building jar: C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-javadoc.jar
+[INFO] 
+[INFO] --- maven-gpg-plugin:1.6:sign (ossrh) @ selenium-helper ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ selenium-helper ---
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\pom.xml to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.pom
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-sources.jar to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-sources.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-javadoc.jar to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-javadoc.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar.asc to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.jar.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.pom.asc to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.pom.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-sources.jar.asc to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-sources.jar.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-javadoc.jar.asc to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-javadoc.jar.asc
+[INFO] 
+[INFO] --- nexus-staging-maven-plugin:1.6.7:deploy (injected-nexus-deploy) @ selenium-helper ---
+[INFO] Performing local staging (local stagingDirectory="C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging")...
+[INFO]  + Using server credentials "ossrh" from Maven settings.
+[INFO]  * Connected to Nexus at https://oss.sonatype.org:443/, is version 2.13.0-01 and edition "Professional"
+[INFO]  * Using staging profile ID "e6ba840e6069b" (matched by Nexus).
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\pom.xml to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.pom
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-sources.jar to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-sources.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-javadoc.jar to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-javadoc.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar.asc to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.jar.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.pom.asc to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.pom.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-sources.jar.asc to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-sources.jar.asc
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0-javadoc.jar.asc to C:\Users\mayurb\workspace\kspl-selenium-helper\target\nexus-staging\staging\e6ba840e6069b\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0-javadoc.jar.asc
+[INFO] Performing remote staging...
+[INFO] 
+[INFO]  * Remote staging into staging profile ID "e6ba840e6069b"
+[INFO]  * Created staging repository with ID "inmayurshah-1004".
+[INFO]  * Staging repository at https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004
+[INFO]  * Uploading locally staged artifacts to profile in.mayurshah
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-javadoc.jar
+2/116 KB   4/116 KB   6/116 KB   8/116 KB   10/116 KB   12/116 KB   14/116 KB   16/116 KB   18/116 KB   20/116 KB   22/116 KB   24/116 KB   26/116 KB   28/116 KB   30/116 KB   32/116 KB   34/116 KB   36/116 KB   38/116 KB   40/116 KB   42/116 KB   44/116 KB   46/116 KB   48/116 KB   50/116 KB   52/116 KB   54/116 KB   56/116 KB   58/116 KB   60/116 KB   62/116 KB   64/116 KB   66/116 KB   68/116 KB   70/116 KB   72/116 KB   74/116 KB   76/116 KB   78/116 KB   80/116 KB   82/116 KB   84/116 KB   86/116 KB   88/116 KB   90/116 KB   92/116 KB   94/116 KB   96/116 KB   98/116 KB   100/116 KB   102/116 KB   104/116 KB   106/116 KB   108/116 KB   110/116 KB   112/116 KB   114/116 KB   116/116 KB                Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-javadoc.jar (116 KB at 35.9 KB/sec)
+Downloading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/maven-metadata.xml
+             Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/maven-metadata.xml
+307/307 B                Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/maven-metadata.xml (307 B at 0.2 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.jar.asc
+473/473 B               Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.jar.asc (473 B at 1.6 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.jar
+2/28 KB     4/28 KB   6/28 KB   8/28 KB   10/28 KB   12/28 KB   14/28 KB   16/28 KB   18/28 KB   20/28 KB   22/28 KB   24/28 KB   26/28 KB   28/28 KB              Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.jar (28 KB at 20.0 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.pom
+2/5 KB     4/5 KB   5/5 KB            Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.pom (5 KB at 4.8 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-javadoc.jar.asc
+473/473 B               Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-javadoc.jar.asc (473 B at 1.5 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-sources.jar
+2/15 KB     4/15 KB   6/15 KB   8/15 KB   10/15 KB   12/15 KB   14/15 KB   15/15 KB              Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-sources.jar (15 KB at 17.2 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.pom.asc
+473/473 B               Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0.pom.asc (473 B at 1.6 KB/sec)
+Uploading: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-sources.jar.asc
+473/473 B               Uploaded: https://oss.sonatype.org:443/service/local/staging/deployByRepositoryId/inmayurshah-1004/in/mayurshah/selenium-helper/1.0.0/selenium-helper-1.0.0-sources.jar.asc (473 B at 1.6 KB/sec)
+[INFO]  * Upload of locally staged artifacts finished.
+[INFO]  * Closing staging repository with ID "inmayurshah-1004".
+
+Waiting for operation to complete...
+.....
+
+[INFO] Remote staged 1 repositories, finished with success.
+[INFO] Remote staging repositories are being released...
+
+Waiting for operation to complete...
+......
+
+[INFO] Remote staging repositories released.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:07 min
+[INFO] Finished at: 2016-09-30T21:05:39+05:30
+[INFO] Final Memory: 38M/356M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "release" could not be activated because it does not exist.

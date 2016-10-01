@@ -1,0 +1,155 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building selenium-helper 1.0.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ selenium-helper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\mayurb\workspace\kspl-selenium-helper\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ selenium-helper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ selenium-helper ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\mayurb\workspace\kspl-selenium-helper\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ selenium-helper ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ selenium-helper ---
+[INFO] Surefire report directory: C:\Users\mayurb\workspace\kspl-selenium-helper\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNGMapConfigurator@6a6824be
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:200::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 138
+Key:	field8	Value: 36
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:200:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: JP
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:208::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 103.8
+Key:	field8	Value: 1.3667
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:208:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: SG
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:218::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 138
+Key:	field8	Value: 36
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:218:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: JP
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Key:	field11	Value: 0
+Key:	field12	Value: 0
+Key:	field1	Value: 2001:220::
+Key:	field10	Value: 
+Key:	field7	Value: 
+Key:	field6	Value: 
+Key:	field9	Value: 127.5
+Key:	field8	Value: 37
+Key:	field3	Value: 4.25405E+37
+Key:	field2	Value: 2001:220:ffff:ffff:ffff:ffff:ffff:ffff
+Key:	field5	Value: KR
+Key:	field4	Value: 4.25405E+37
+
+
+
+
+
+
+
+
+
+
+Report directory created!
+C:\Users\mayurb\workspace\kspl-selenium-helper\.\reports
+C:\Users\mayurb\workspace\kspl-selenium-helper\config.properties
+---Getting references to all files in: C:\Users\mayurb\workspace\kspl-selenium-helper\reports
+     file:C:\Users\mayurb\workspace\kspl-selenium-helper\reports\report.html
+     file:C:\Users\mayurb\workspace\kspl-selenium-helper\reports\report.xml
+---Creating zip file
+Adding 'report.html' to zip file
+Adding 'report.xml' to zip file
+---Done
+C:\Users\mayurb\workspace\kspl-selenium-helper\config.properties
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.174 sec
+
+Results :
+
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ selenium-helper ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ selenium-helper ---
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\target\selenium-helper-1.0.0.jar to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.jar
+[INFO] Installing C:\Users\mayurb\workspace\kspl-selenium-helper\pom.xml to C:\Users\mayurb\.m2\repository\in\mayurshah\selenium-helper\1.0.0\selenium-helper-1.0.0.pom
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ selenium-helper ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.180 s
+[INFO] Finished at: 2016-09-30T00:37:21+05:30
+[INFO] Final Memory: 13M/224M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.7:deploy (default-deploy) on project selenium-helper: Deployment failed: repository element was not specified in the POM inside distributionManagement element or in -DaltDeploymentRepository=id::layout::url parameter -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

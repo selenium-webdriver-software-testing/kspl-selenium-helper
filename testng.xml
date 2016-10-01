@@ -6,45 +6,45 @@
 <parameter name="remotePort" value="4444"></parameter>
 <parameter name="baseURL" value="http://www.kagrana.com/"></parameter>
 <parameter name="OS" value="WINDOWS"></parameter>
-<parameter name="browser" value="FIREFOX"></parameter>
+<parameter name="browser" value="firefox"></parameter>
 <parameter name="version" value="23.0"></parameter>
 <parameter name="internal" value="true"></parameter>
 <test name="SingleTest" >
     <classes>
-       <class name="com.kagrana.base.SingleTest" >
+       <class name="SingleTest" >
        </class>
     </classes>
 </test>
 <!-- -->
 <test name="reportingTest" >
     <classes>
-       <class name="com.kagrana.base.BaseActionsTest" >
+       <class name="BaseActionsTest" >
        </class>
     </classes>
 </test>
 <test name="reportingTest1" >
     <classes>
-       <class name="com.kagrana.base.BaseActionsTest1" >
+       <class name="BaseActionsTest1" >
        </class>
     </classes>
 </test>
 <test name="reportingTest2" >
     <classes>
-       <class name="com.kagrana.base.BaseActionsTest2" >
+       <class name="BaseActionsTest2" >
            
        </class>
     </classes>
 </test>
 <test name="reportingTest3" >
     <classes>
-       <class name="com.kagrana.base.BaseActionsTest3" >
+       <class name="BaseActionsTest3" >
            
        </class>
     </classes>
 </test>
 <test name="reportingTest4" >
     <classes>
-       <class name="com.kagrana.base.BaseActionsTest4" >
+       <class name="BaseActionsTest4" >
            
        </class>
     </classes>

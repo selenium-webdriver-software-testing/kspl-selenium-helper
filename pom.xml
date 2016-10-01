@@ -4,11 +4,40 @@
 
   <groupId>in.mayurshah</groupId>
   <artifactId>selenium-helper</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>selenium-helper</name>
   <url>http://mayurshah.in/framework-faq/selenium-helper</url>
+
+<developers>
+    <developer>
+      <id>mshah</id>
+      <name>Mayur S</name>
+      <email>qamate@mayurshah.in</email>
+      <url>http://mayurshah.in/user/mayur</url>
+      <organization>Selenium Consultant</organization>
+      <organizationUrl>http://mayurshah.in/user/mayur</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>India/Chennai</timezone>
+      <properties>
+        <picUrl>http://www.gravatar.com/avatar/6c350f3161c077cf0374264002c07670?s=200</picUrl>
+      </properties>
+    </developer>
+  </developers>
+
+
+<licenses>
+  <license>
+    <name>Apache License, Version 2.0</name>
+    <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <distribution>repo</distribution>
+    <comments>A business-friendly OSS license</comments>
+  </license>
+</licenses>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
