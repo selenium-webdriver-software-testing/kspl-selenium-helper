@@ -32,7 +32,7 @@ public class MiscellaneousFunctions {
 	 * @param remoteURL -Enter remote URL, e.g. in.mayurshah
 	 * @param port - Enter your port
 	 * @return - returns fully qualified Grid URL
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException Throws error if the URL is wrong.
 	 */
 	public static URL getWebDriverURL(String remoteURL, int port)
 			throws MalformedURLException {
@@ -106,8 +106,8 @@ public class MiscellaneousFunctions {
 	 * This function returns string of the body from Mime Type
 	 * @param message -Pass your message
 	 * @return -Get string of the body.
-	 * @throws MessagingException
-	 * @throws IOException
+	 * @throws MessagingException This throws Exception while messaging
+	 * @throws IOException This throws IO Exception
      */
 	public static String bodyFromMimeType(Object message)
 			throws MessagingException, IOException {
@@ -152,7 +152,7 @@ public class MiscellaneousFunctions {
 	 * @param driver -Pass your WebDriver instance.
 	 * @param screenshotdir - Pass your screenshot directory
 	 * @return - Returns location where screenshot is stored.
-	 * @throws IOException
+	 * @throws IOException Throw exception if any issue with saving file.
      */
 	public static String captureScreenshot(WebDriver driver,
 			String screenshotdir) throws IOException {
