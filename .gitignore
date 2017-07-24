@@ -14,3 +14,17 @@ hs_err_pid*
 /reports
 /test-output
 /report.xsl
+
+.idea
+*.iml
+target
+target/classes
+target/test-classes
+target/generated-sources/
+target/generated-test-sources/
+.classpath
+.project
+/bin/*
+/bin
+/.settings
+reports_*.zip

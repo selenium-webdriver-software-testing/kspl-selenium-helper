@@ -21,7 +21,7 @@ import in.mayurshah.util.Log;
  */
 
 public class xRemoteWebDriver extends RemoteWebDriver {
-		
+
 	  
 	  public xRemoteWebDriver(CommandExecutor executor, Capabilities desiredCapabilities,Log log)
 	  {
@@ -39,24 +39,23 @@ public class xRemoteWebDriver extends RemoteWebDriver {
 	  }
 	  public static WebDriver getInstance(WebDriverConfig config, Log log) throws MalformedURLException, FileNotFoundException{
 		  if(!config.isIntenal()){
-			  DesiredCapabilities cap = new DesiredCapabilities();
-			  cap.setBrowserName(config.getBrowserName());
-			  cap.setCapability("platform", config.getOS());
-			  cap.setVersion(config.getBrowserVersion());
+			  DesiredCapabilities cap = config.getDesiredCapabilities();
 			  return 
 					  new xRemoteWebDriver(new URL(config.getRemoteURL()), cap, log);
 		  }
 		  else{
 			  File chromeDriver = new File("drivers\\chromedriver.exe");
 			  File IEDriver = new File("drivers\\IEDriverServer.exe");
-			if(config.getBrowserName().equals("firefox"))
+			if(config.getDesiredCapabilities().getBrowserName().equals("firefox"))
 				return new FirefoxDriver();
-			if(config.getBrowserName().equals("chrome")){
+			if(config.getDesiredCapabilities().getBrowserName().equals("chrome")){
 				if(!chromeDriver.exists()) throw new FileNotFoundException("chromedriver.exe not found under 'drivers' folder");
 				System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
+				if(config.getChromeOptions() != null)
+					return new ChromeDriver(config.getChromeOptions());
 				return new ChromeDriver();
 			}
-			if(config.getBrowserName().equals("internet explorer")){
+			if(config.getDesiredCapabilities().getBrowserName().equals("internet explorer")){
 				if(!IEDriver.exists()) throw new FileNotFoundException("IEDriverServer.exe is not found under 'drivers' folder");
 				System.setProperty("webdriver.ie.driver", IEDriver.getAbsolutePath());
 				return new InternetExplorerDriver();

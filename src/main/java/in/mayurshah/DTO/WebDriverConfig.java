@@ -1,5 +1,12 @@
 package in.mayurshah.DTO;
 
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import sun.security.krb5.internal.crypto.Des;
+
+import java.util.Map;
+
 public class WebDriverConfig {
 	private boolean intenal;
 	private String remoteURL;
@@ -7,13 +14,41 @@ public class WebDriverConfig {
 	private String browserName;
 	private String OS;
 	private String browserVersion;
-	
+	private DesiredCapabilities desiredCapabilities;
+	private ChromeOptions chromeOptions;
+
+	public WebDriverConfig(){
+		this.desiredCapabilities = new DesiredCapabilities();
+	}
+
+	public void setChromeOptions(ChromeOptions chromeOptions){
+		this.chromeOptions = chromeOptions;
+	}
+
+	public ChromeOptions getChromeOptions(){
+		return this.chromeOptions;
+	}
 	public boolean isIntenal() {
 		return intenal;
 	}
 	public void setIntenal(boolean intenal) {
 		this.intenal = intenal;
 	}
+
+	public void appendCapability(String key, Object value){
+		this.desiredCapabilities.setCapability(key,value);
+	}
+	public void appendCapability(String key, String value){
+		this.desiredCapabilities.setCapability(key,value);
+	}
+
+	public DesiredCapabilities getDesiredCapabilities(){
+		this.desiredCapabilities.setBrowserName(this.browserName);
+		this.desiredCapabilities.setPlatform(Platform.fromString(this.OS));
+		this.desiredCapabilities.setVersion(this.browserVersion);
+		return desiredCapabilities;
+	}
+
 	public String getRemoteURL() {
 		return remoteURL;
 	}
@@ -26,21 +61,15 @@ public class WebDriverConfig {
 	public void setTestCaseName(String testCaseName) {
 		TestCaseName = testCaseName;
 	}
-	public String getBrowserName() {
-		return browserName;
-	}
+
 	public void setBrowserName(String browserName) {
 		this.browserName = browserName;
 	}
-	public String getOS() {
-		return OS;
-	}
+
 	public void setOS(String oS) {
 		OS = oS;
 	}
-	public String getBrowserVersion() {
-		return browserVersion;
-	}
+
 	public void setBrowserVersion(String browserVersion) {
 		this.browserVersion = browserVersion;
 	}

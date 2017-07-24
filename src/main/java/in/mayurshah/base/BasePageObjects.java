@@ -78,7 +78,8 @@ public class BasePageObjects {
 
 	protected static void containsText(Log log, WebElement element, String str,
 			boolean caseSensitive) {
-		log.write("Checking string " + str + " in " + element.getText());
+		if(log != null)
+			log.write("Checking string " + str + " in " + element.getText());
 		if (caseSensitive)
 			Assert.assertTrue(element.getText().contains(str));
 		else
@@ -132,54 +133,48 @@ public class BasePageObjects {
 	 */
 	protected static void waitForClickable(Log log, WebDriver driver, By by,
 			int duration) {
-		for (int x = 0; x <= 5; x++) {
-			try {
-				new WebDriverWait(driver, duration).until(ExpectedConditions
-						.elementToBeClickable(by));
-				break;
-			} catch (StaleElementReferenceException e) {
-				e.printStackTrace();
-			}
+		try {
+			new WebDriverWait(driver, duration).until(ExpectedConditions
+					.elementToBeClickable(by));
+		} catch (StaleElementReferenceException e) {
+			if(log != null)
+				log.write(e);
 		}
 	}
 
 	protected static void waitForClickable(Log log, WebDriver driver,
 			WebElement element, int duration) {
-		for (int x = 0; x <= 5; x++) {
-			try {
-				new WebDriverWait(driver, duration).until(ExpectedConditions
-						.elementToBeClickable(element));
-				break;
-			} catch (StaleElementReferenceException e) {
-				e.printStackTrace();
-			}
+		try {
+			new WebDriverWait(driver, duration).until(ExpectedConditions
+					.elementToBeClickable(element));
+		} catch (StaleElementReferenceException e) {
+			if(log != null)
+				log.write(e);
 		}
+
 	}
 
 	protected static void waitForElementVisible(Log log, WebDriver driver,
 			By by, int duration) {
-		for (int x = 0; x <= 5; x++) {
-			try {
-				new WebDriverWait(driver, duration).until(ExpectedConditions
-						.visibilityOfElementLocated(by));
-				break;
-			} catch (StaleElementReferenceException e) {
-				e.printStackTrace();
-			}
+		try {
+			new WebDriverWait(driver, duration).until(ExpectedConditions
+					.visibilityOfElementLocated(by));
+		} catch (StaleElementReferenceException e) {
+			if(log != null)
+				log.write(e);
 		}
 	}
 
 	protected static void waitForElementVisible(Log log, WebDriver driver,
 			WebElement element, int duration) {
-		for (int x = 0; x <= 5; x++) {
-			try {
-				new WebDriverWait(driver, duration).until(ExpectedConditions
-						.visibilityOf(element));
-				break;
-			} catch (StaleElementReferenceException e) {
-				e.printStackTrace();
-			}
+		try {
+			new WebDriverWait(driver, duration).until(ExpectedConditions
+					.visibilityOf(element));
+		} catch (StaleElementReferenceException e) {
+			if(log != null)
+				log.write(e);
 		}
+
 	}
 
 }
