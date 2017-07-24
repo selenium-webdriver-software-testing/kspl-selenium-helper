@@ -60,8 +60,9 @@ public abstract class BaseActions {
 		options.addArguments("--enable-strict-powerful-feature-restrictions");
 		JsonObject jsonObject = new JsonObject();
 		jsonObject.addProperty("profile.default_content_settings.geolocation", 2);
+		jsonObject.addProperty("profile.default_content_setting_values.notifications",2);
 		options.setExperimentalOption("prefs", jsonObject);
-		//options.addArguments("--disable-geolocation");
+		options.addArguments("--disable-notifications");
 		config.setChromeOptions(options);
 		driver = xRemoteWebDriver.getInstance(config, log);
 		driver.manage().window().maximize();
