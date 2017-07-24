@@ -3,6 +3,7 @@ package in.mayurshah.base;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import com.google.gson.JsonObject;
 import in.mayurshah.DTO.WebDriverConfig;
 import in.mayurshah.util.Log;
 import org.openqa.selenium.WebDriver;
@@ -57,7 +58,10 @@ public abstract class BaseActions {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
 		options.addArguments("--enable-strict-powerful-feature-restrictions");
-		options.addArguments("--disable-geolocation");
+		JsonObject jsonObject = new JsonObject();
+		jsonObject.addProperty("profile.default_content_settings.geolocation", 2);
+		options.setExperimentalOption("prefs", jsonObject);
+		//options.addArguments("--disable-geolocation");
 		config.setChromeOptions(options);
 		driver = xRemoteWebDriver.getInstance(config, log);
 		driver.manage().window().maximize();

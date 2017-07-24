@@ -3,9 +3,6 @@ package in.mayurshah.DTO;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import sun.security.krb5.internal.crypto.Des;
-
-import java.util.Map;
 
 public class WebDriverConfig {
 	private boolean intenal;

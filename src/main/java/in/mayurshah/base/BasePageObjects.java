@@ -1,15 +1,14 @@
 package in.mayurshah.base;
 
 import in.mayurshah.util.Log;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.util.concurrent.TimeUnit;
 
 public class BasePageObjects {
 
@@ -64,8 +63,11 @@ public class BasePageObjects {
 	protected static void waitForFrame(Log log, WebDriver driver, By by,
 			int duration) {
 		try {
-			new WebDriverWait(driver, duration).until(ExpectedConditions
-					.frameToBeAvailableAndSwitchToIt(by));
+			new FluentWait<WebDriver>(driver)
+					.withTimeout(duration,TimeUnit.SECONDS)
+					.pollingEvery(10,TimeUnit.SECONDS)
+					.ignoring(StaleElementReferenceException.class,NoSuchElementException.class)
+					.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(by));
 		} catch (StaleElementReferenceException e) {
 			e.printStackTrace();
 		}
@@ -134,8 +136,11 @@ public class BasePageObjects {
 	protected static void waitForClickable(Log log, WebDriver driver, By by,
 			int duration) {
 		try {
-			new WebDriverWait(driver, duration).until(ExpectedConditions
-					.elementToBeClickable(by));
+			new FluentWait<WebDriver>(driver)
+					.withTimeout(duration, TimeUnit.SECONDS)
+					.pollingEvery(10,TimeUnit.SECONDS)
+					.ignoring(StaleElementReferenceException.class, NoSuchElementException.class)
+					.until(ExpectedConditions.elementToBeClickable(by));
 		} catch (StaleElementReferenceException e) {
 			if(log != null)
 				log.write(e);
@@ -145,8 +150,11 @@ public class BasePageObjects {
 	protected static void waitForClickable(Log log, WebDriver driver,
 			WebElement element, int duration) {
 		try {
-			new WebDriverWait(driver, duration).until(ExpectedConditions
-					.elementToBeClickable(element));
+			new FluentWait<WebDriver>(driver)
+					.withTimeout(duration, TimeUnit.SECONDS)
+					.pollingEvery(10,TimeUnit.SECONDS)
+					.ignoring(StaleElementReferenceException.class, NoSuchElementException.class)
+					.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (StaleElementReferenceException e) {
 			if(log != null)
 				log.write(e);
@@ -157,8 +165,11 @@ public class BasePageObjects {
 	protected static void waitForElementVisible(Log log, WebDriver driver,
 			By by, int duration) {
 		try {
-			new WebDriverWait(driver, duration).until(ExpectedConditions
-					.visibilityOfElementLocated(by));
+			new FluentWait<WebDriver>(driver)
+					.withTimeout(duration, TimeUnit.SECONDS)
+					.pollingEvery(10,TimeUnit.SECONDS)
+					.ignoring(StaleElementReferenceException.class, NoSuchElementException.class)
+					.until(ExpectedConditions.visibilityOfElementLocated(by));
 		} catch (StaleElementReferenceException e) {
 			if(log != null)
 				log.write(e);
@@ -168,8 +179,11 @@ public class BasePageObjects {
 	protected static void waitForElementVisible(Log log, WebDriver driver,
 			WebElement element, int duration) {
 		try {
-			new WebDriverWait(driver, duration).until(ExpectedConditions
-					.visibilityOf(element));
+			new FluentWait<WebDriver>(driver)
+					.withTimeout(duration, TimeUnit.SECONDS)
+					.pollingEvery(10,TimeUnit.SECONDS)
+					.ignoring(StaleElementReferenceException.class, NoSuchElementException.class)
+					.until(ExpectedConditions.visibilityOf(element));
 		} catch (StaleElementReferenceException e) {
 			if(log != null)
 				log.write(e);
