@@ -32,7 +32,7 @@ public class MiscellaneousFunctions {
 	 * @param remoteURL -Enter remote URL, e.g. in.mayurshah
 	 * @param port - Enter your port
 	 * @return - returns fully qualified Grid URL
-	 * @throws MalformedURLException
+	 * @throws MalformedURLException - This exception occures when URL is not right
 	 */
 	public static URL getWebDriverURL(String remoteURL, int port)
 			throws MalformedURLException {
@@ -106,8 +106,8 @@ public class MiscellaneousFunctions {
 	 * This function returns string of the body from Mime Type
 	 * @param message -Pass your message
 	 * @return -Get string of the body.
-	 * @throws MessagingException
-	 * @throws IOException
+	 * @throws MessagingException - This is thrown when there is any exception in Messaging
+	 * @throws IOException - This mostly occurs during connection error
      */
 	public static String bodyFromMimeType(Object message)
 			throws MessagingException, IOException {
@@ -152,16 +152,16 @@ public class MiscellaneousFunctions {
 	 * @param driver -Pass your WebDriver instance.
 	 * @param screenshotdir - Pass your screenshot directory
 	 * @return - Returns location where screenshot is stored.
-	 * @throws IOException
+	 * @throws IOException -Exception is thrown during communcation errors.
      */
 	public static String captureScreenshot(WebDriver driver,
 			String screenshotdir) throws IOException {
 		String randomUUID = UUID.randomUUID().toString();
-		String storeFileName = screenshotdir + "\\"
+		String storeFileName = screenshotdir + File.separator
 				+ getFileNameFromURL(driver.getCurrentUrl()) + "_"
 				+ randomUUID + ".png";
-		String[] screenshotdirsplit = screenshotdir.split("\\\\");
-		String fileName = screenshotdirsplit[screenshotdirsplit.length - 1] + "\\"
+		String[] screenshotdirsplit = screenshotdir.split(File.separator);
+		String fileName = screenshotdirsplit[screenshotdirsplit.length - 1] + File.separator
 				+ getFileNameFromURL(driver.getCurrentUrl()) + "_"
 				+ randomUUID + ".png";
 		File scrFile = ((TakesScreenshot) driver)

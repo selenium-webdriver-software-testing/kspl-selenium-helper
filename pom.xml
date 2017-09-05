@@ -4,7 +4,7 @@
 
   <groupId>in.mayurshah</groupId>
   <artifactId>selenium-helper</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <packaging>jar</packaging>
 
   <name>selenium-helper</name>
@@ -139,7 +139,7 @@
   		<version>1.4</version>
   	</dependency>
   </dependencies>
-  <description>selenium-helper is developed to make selenium testing easy.</description>
+  <description>selenium-helper is developed to easily automate test cases using Selenium WebDriver.</description>
 	<scm>
 		<url>https://github.com/selenium-webdriver-software-testing/kspl-selenium-helper</url>
 		<developerConnection>Mayur Shah</developerConnection>

@@ -1,5 +1,6 @@
 package in.mayurshah.base;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -47,7 +48,7 @@ public abstract class BaseActions {
 		this.testCase.setExecutionEnvironment("{browser:"+browser+",browserVersion:"+version+",OperatingSystem:"+OS+"}");
 		this.testCase.setParentURL(baseURL);
 		this.testCase.setTestCaseId("KT"+testCaseCount++);
-		this.testCase.setScreenshotDirectory(log.getReportDirectory()+"\\images");
+		this.testCase.setScreenshotDirectory(log.getReportDirectory()+ File.separator + "images");
 		config = new WebDriverConfig();
 		config.setRemoteURL(remoteURL);
 		this.baseURL = baseURL;

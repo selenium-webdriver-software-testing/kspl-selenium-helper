@@ -40,7 +40,7 @@ public class Log {
 	public String getReportDirectory() throws IOException {
 		if(reportDirectory == null){
 				File currentDir = new File(".");
-				File reportDir = new File(currentDir.getAbsolutePath() + "\\"+ "reports"+File.separator);
+				File reportDir = new File(currentDir.getAbsolutePath() + File.separator+ "reports"+File.separator);
 				if(reportDir.exists()){
 						FileUtils.cleanDirectory(reportDir);
 						reportDir.delete();
@@ -119,8 +119,8 @@ public class Log {
 	 * Generate report in HTML file
 	 */
 	private void writeHTMLReport(String reportDirectory){
-		String xmlFileName = reportDirectory + "\\" + "report.xml";
-		String htmlFileName = reportDirectory + "\\" + "report.html";
+		String xmlFileName = reportDirectory + File.separator+ "report.xml";
+		String htmlFileName = reportDirectory + File.separator + "report.html";
 		try{
 			
 			FileOutputStream fos = new FileOutputStream(xmlFileName);
