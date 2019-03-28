@@ -11,10 +11,10 @@ This library is intended to make job of selenium webdriver user easy. This can b
 - HTML report / Excel reporting
 - Reading data from Excel file or CSV file TestNG
 
-FAQ: https://softwaretestingboard.com/qna/tag/selenium-helper?utm_source=github&utm_campaign=kspl-selenium-helper&utm_medium=readme_file
+FAQ: https://softwaretestingboard.com/q2a/tag/selenium-helper?utm_source=github&utm_campaign=kspl-selenium-helper&utm_medium=readme_file
 
 
-Ask us a technical question: https://softwaretestingboard.com/qna/ask?utm_source=github&utm_campaign=kspl-selenium-helper&utm_medium=readme_file.
+Ask us a technical question: https://softwaretestingboard.com/q2a/ask?utm_source=github&utm_campaign=kspl-selenium-helper&utm_medium=readme_file.
 
 TODO: Pending implementations
 =============================
